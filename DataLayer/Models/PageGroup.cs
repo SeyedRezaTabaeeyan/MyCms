@@ -17,7 +17,7 @@ namespace DataLayer
         [Display(Name ="عنوان گروه")]
         [Required(ErrorMessage = "لطفا {0} را وارد نمایید ")]
         [MaxLength(100)]
-        public int GroupTitle { get; set; }
+        public String GroupTitle { get; set; }
 
 
         //Navigation Property
