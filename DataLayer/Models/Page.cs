@@ -54,5 +54,13 @@ namespace DataLayer
         public DateTime CreaetDate { get; set; }
 
 
+        //Navigation Property
+        public virtual List<PageComment> PageComments { get; set; }
+        public virtual PageGroup PageGroup { get; set; }
+        public Page()
+        {
+
+        }
+
     }
 }

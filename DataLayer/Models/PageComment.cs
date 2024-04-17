@@ -47,5 +47,15 @@ namespace DataLayer
 
         [Display(Name = "تاریخ ثبت")]
         public DateTime CreateDate { get; set; }
+
+
+        //Navigation Property
+        public virtual Page Page { get; set; }
+
+        public PageComment()
+        {
+
+        }
+
     }
 }

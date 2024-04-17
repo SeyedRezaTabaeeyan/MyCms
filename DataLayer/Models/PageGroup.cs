@@ -19,5 +19,12 @@ namespace DataLayer
         [MaxLength(100)]
         public int GroupTitle { get; set; }
 
+
+        //Navigation Property
+        public virtual List<Page> Pages { get; set; }
+        public PageGroup()
+        {
+
+        }
     }
 }
