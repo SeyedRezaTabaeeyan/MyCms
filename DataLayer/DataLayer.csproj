@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\MyCmsContext.cs" />
+    <Compile Include="Context\UnitOfWork.cs" />
     <Compile Include="Migrations\202404171620145_Initial_DB.cs" />
     <Compile Include="Migrations\202404171620145_Initial_DB.designer.cs">
       <DependentUpon>202404171620145_Initial_DB.cs</DependentUpon>

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer.Context
+namespace DataLayer
 {
     public class MyCmsContext:DbContext
     {
