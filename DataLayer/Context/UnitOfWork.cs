@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    public class UnitOfWork
+    public class UnitOfWork:IDisposable
     {
         MyCmsContext db=new MyCmsContext();
 
@@ -47,5 +47,10 @@ namespace DataLayer
 			
 		}
 
-	}
+        public void Dispose()
+        {
+			db.SaveChanges();
+			db.Dispose();
+        }
+    }
 }
