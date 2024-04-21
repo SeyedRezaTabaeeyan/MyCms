@@ -35,22 +35,18 @@ namespace DataLayer
         public string Text { get; set; }
 
 
-        [Display(Name = "تعداد بازدید صفحه")]
-        [Required(ErrorMessage = "لطفا {0} را وارد نمایید ")]
+        [Display(Name = "تعداد بازدید صفحه")]        
         public int Visit { get; set; }
 
-        [Display(Name = "عکس صفحه")]
-        [Required(ErrorMessage = "لطفا {0} را وارد نمایید ")]
+        [Display(Name = "عکس صفحه")]        
         public string ImageName { get; set; }
 
 
-        [Display(Name = "نمایش در اسلایدر")]
-        [Required(ErrorMessage = "لطفا {0} را وارد نمایید ")]
+        [Display(Name = "نمایش در اسلایدر")]        
         public bool ShowInSlider { get; set; }
 
 
-        [Display(Name = "تاریخ ایجاد")]
-        [Required(ErrorMessage = "لطفا {0} را وارد نمایید ")]
+        [Display(Name = "تاریخ ایجاد")]        
         public DateTime CreaetDate { get; set; }
 
 

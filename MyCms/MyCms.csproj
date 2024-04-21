@@ -177,6 +177,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404211914446_Initial_DB.cs" />
+    <Compile Include="Migrations\202404211914446_Initial_DB.designer.cs">
+      <DependentUpon>202404211914446_Initial_DB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -277,6 +282,11 @@
       <Project>{5d74a21e-3c6b-485f-ad91-9b6dc2a8d5dc}</Project>
       <Name>DataLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202404211914446_Initial_DB.resx">
+      <DependentUpon>202404211914446_Initial_DB.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
