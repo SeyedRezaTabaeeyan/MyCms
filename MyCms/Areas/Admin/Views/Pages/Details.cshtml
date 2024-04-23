@@ -4,10 +4,9 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>جزئیات خبر </h2>
 
-<div>
-    <h4>Page</h4>
+<div>    
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -55,7 +54,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ImageName)
+            <img class="thumbnail" src="~/PageImages/@Model.ImageName" style="max-width:150px" />
         </dd>
 
         <dt>
@@ -71,12 +70,12 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CreaetDate)
+            @Model.CreaetDate.ToShamsi()
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PageId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("ویرایش", "Edit", new { id = Model.PageId }) |
+    @Html.ActionLink("بازگشت", "Index")
 </p>

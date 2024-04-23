@@ -66,10 +66,20 @@
             @item.CreaetDate.ToShamsi()
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.PageId }) |
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.PageId }) |
             @Html.ActionLink("Details", "Details", new { id = item.PageId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.PageId })
+            @Html.ActionLink("Delete", "Delete", new { id = item.PageId })*@
+            <a class="btn btn-sm btn-Primary" href="/Admin/Pages/Details/@item.PageId">
+                <i class="glyphicon glyphicon-list"></i>
+            </a>
+            <a class="btn btn-sm btn-warning" href="/Admin/Pages/Edit/@item.PageId">
+                <i class="glyphicon glyphicon-edit"></i>
+            </a>
+            <a class="btn btn-sm btn-danger" href="/Admin/Pages/Delete/@item.PageId">
+                <i class="glyphicon glyphicon-trash"></i>
+            </a>
         </td>
+
     </tr>
 }
 
