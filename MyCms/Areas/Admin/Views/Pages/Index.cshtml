@@ -12,22 +12,22 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.ImageName)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.PageGroup.GroupTitle)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Title)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.ShortDescription)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Text)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Visit)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ShowInSlider)
@@ -41,22 +41,22 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            <img src="~/PageImages/@item.ImageName" class="thumbnail" style="max-width:120px" />
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.PageGroup.GroupTitle)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Title)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.ShortDescription)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Text)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Visit)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImageName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ShowInSlider)
@@ -65,9 +65,9 @@
             @Html.DisplayFor(modelItem => item.CreaetDate)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PageId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PageId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PageId })
+            @Html.ActionLink("Edit", "Edit", new { id = item.PageId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.PageId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.PageId })
         </td>
     </tr>
 }
