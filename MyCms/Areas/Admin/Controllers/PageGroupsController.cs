@@ -17,7 +17,7 @@ namespace MyCms.Areas.Admin.Controllers
         // GET: Admin/PageGroups
         public ActionResult Index()
         {
-            return View(db.PageGroups.Get());
+            return View(db.PageGroupRepository.Get());
         }
 
         // GET: Admin/PageGroups/Details/5
@@ -27,7 +27,7 @@ namespace MyCms.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PageGroup pageGroup = db.PageGroups.GetById(id);
+            PageGroup pageGroup = db.PageGroupRepository.GetById(id);
             if (pageGroup == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace MyCms.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.PageGroups.Insert(pageGroup);                
+                db.PageGroupRepository.Insert(pageGroup);                
                 return RedirectToAction("Index");
             }
 
@@ -64,7 +64,7 @@ namespace MyCms.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PageGroup pageGroup = db.PageGroups.GetById(id);
+            PageGroup pageGroup = db.PageGroupRepository.GetById(id);
             if (pageGroup == null)
             {
                 return HttpNotFound();
@@ -81,7 +81,7 @@ namespace MyCms.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.PageGroups.Update(pageGroup);                
+                db.PageGroupRepository.Update(pageGroup);                
                 return RedirectToAction("Index");
             }
             return View(pageGroup);
@@ -94,7 +94,7 @@ namespace MyCms.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PageGroup pageGroup = db.PageGroups.GetById(id);
+            PageGroup pageGroup = db.PageGroupRepository.GetById(id);
             if (pageGroup == null)
             {
                 return HttpNotFound();
@@ -107,8 +107,8 @@ namespace MyCms.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            PageGroup pageGroup = db.PageGroups.GetById(id);
-            db.PageGroups.Delete(pageGroup);
+            PageGroup pageGroup = db.PageGroupRepository.GetById(id);
+            db.PageGroupRepository.Delete(pageGroup);
             return RedirectToAction("Index");
         }
 

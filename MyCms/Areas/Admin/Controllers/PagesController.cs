@@ -12,13 +12,12 @@ namespace MyCms.Areas.Admin.Controllers
 {
     public class PagesController : Controller
     {
-        private MyCmsContext db = new MyCmsContext();
+        private UnitOfWork db = new UnitOfWork();
 
         // GET: Admin/Pages
         public ActionResult Index()
-        {
-            var pages = db.Pages.Include(p => p.PageGroup);
-            return View(pages.ToList());
+        {            
+            return View(db.PageRepository.Get(null, null, "PageGroup").ToList());
         }
 
         // GET: Admin/Pages/Details/5
@@ -28,7 +27,7 @@ namespace MyCms.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Page page = db.Pages.Find(id);
+            Page page = db.PageRepository.GetById(id);
             if (page == null)
             {
                 return HttpNotFound();
@@ -39,7 +38,7 @@ namespace MyCms.Areas.Admin.Controllers
         // GET: Admin/Pages/Create
         public ActionResult Create()
         {
-            ViewBag.GroupId = new SelectList(db.PageGroups, "GroupId", "GroupTitle");
+            ViewBag.GroupId = new SelectList(db.PageGroupRepository.Get(), "GroupId", "GroupTitle");
             return View();
         }
 
@@ -52,12 +51,13 @@ namespace MyCms.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Pages.Add(page);
-                db.SaveChanges();
+                page.CreaetDate= DateTime.Now;
+                page.Visit = 0;
+                db.PageRepository.Insert(page);
                 return RedirectToAction("Index");
             }
 
-            ViewBag.GroupId = new SelectList(db.PageGroups, "GroupId", "GroupTitle", page.GroupId);
+            ViewBag.GroupId = new SelectList(db.PageGroupRepository.Get(), "GroupId", "GroupTitle", page.GroupId);
             return View(page);
         }
 
@@ -68,12 +68,12 @@ namespace MyCms.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Page page = db.Pages.Find(id);
+            Page page = db.PageRepository.GetById(id);
             if (page == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.GroupId = new SelectList(db.PageGroups, "GroupId", "GroupTitle", page.GroupId);
+            ViewBag.GroupId = new SelectList(db.PageGroupRepository.Get(), "GroupId", "GroupTitle", page.GroupId);
             return View(page);
         }
 
@@ -86,11 +86,10 @@ namespace MyCms.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(page).State = EntityState.Modified;
-                db.SaveChanges();
+                db.PageRepository.Update(page);
                 return RedirectToAction("Index");
             }
-            ViewBag.GroupId = new SelectList(db.PageGroups, "GroupId", "GroupTitle", page.GroupId);
+            ViewBag.GroupId = new SelectList(db.PageGroupRepository.Get(), "GroupId", "GroupTitle", page.GroupId);
             return View(page);
         }
 
@@ -101,7 +100,7 @@ namespace MyCms.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Page page = db.Pages.Find(id);
+            Page page = db.PageRepository.GetById(id);
             if (page == null)
             {
                 return HttpNotFound();
@@ -113,10 +112,8 @@ namespace MyCms.Areas.Admin.Controllers
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
-        {
-            Page page = db.Pages.Find(id);
-            db.Pages.Remove(page);
-            db.SaveChanges();
+        {            
+            db.PageRepository.Delete(id);
             return RedirectToAction("Index");
         }
 

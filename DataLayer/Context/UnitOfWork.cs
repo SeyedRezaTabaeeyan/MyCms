@@ -11,38 +11,38 @@ namespace DataLayer
         MyCmsContext db=new MyCmsContext();
 
         //***************************************************
-        private GenericRepository<Page> _pages;
-		public GenericRepository<Page> Pages
+        private GenericRepository<Page> _pageRepository;
+		public GenericRepository<Page> PageRepository
         {
 			get 
 			{
-				if(_pages == null)
-                    _pages = new GenericRepository<Page>(db);
-				return _pages; 
+				if(_pageRepository == null)
+                    _pageRepository = new GenericRepository<Page>(db);
+				return _pageRepository; 
 			}			
 		}
 
         //***************************************************
-        private GenericRepository<PageGroup> _pageGroups;
-		public GenericRepository<PageGroup> PageGroups
-		{
+        private GenericRepository<PageGroup> _pageGroupRepository;
+		public GenericRepository<PageGroup> PageGroupRepository
+        {
 			get
 			{ 
-				if(_pageGroups == null) 
-					_pageGroups= new GenericRepository<PageGroup>(db);
-				return _pageGroups; 
+				if(_pageGroupRepository == null)
+                    _pageGroupRepository = new GenericRepository<PageGroup>(db);
+				return _pageGroupRepository; 
 			}			
 		}
 
 		//***************************************************
-		private GenericRepository<PageComment> _pageComments;
-		public GenericRepository<PageComment> PageComments
-		{
+		private GenericRepository<PageComment> _pageCommentRepository;
+		public GenericRepository<PageComment> PageCommentRepository
+        {
 			get 
 			{
-				if(_pageComments == null)
-					_pageComments= new GenericRepository<PageComment>(db);
-				return _pageComments; 
+				if(_pageCommentRepository == null)
+                    _pageCommentRepository = new GenericRepository<PageComment>(db);
+				return _pageCommentRepository; 
 			}
 			
 		}
