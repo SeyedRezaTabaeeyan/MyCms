@@ -88,10 +88,19 @@ namespace MyCms.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PageId,GroupId,Title,ShortDescription,Text,Visit,ImageName,ShowInSlider,CreaetDate")] Page page)
+        public ActionResult Edit([Bind(Include = "PageId,GroupId,Title,ShortDescription,Text,Visit,ImageName,ShowInSlider,CreaetDate")] Page page , HttpPostedFileBase imgUp)
         {
             if (ModelState.IsValid)
             {
+                if (imgUp != null)
+                {
+                    if (page.ImageName != null)
+                    {
+                        System.IO.File.Delete("/PageImages/" + page.ImageName);
+                    }
+                    page.ImageName = Guid.NewGuid() + Path.GetExtension(imgUp.FileName);
+                    imgUp.SaveAs(Server.MapPath("/PageImages/" + page.ImageName));
+                }
                 db.PageRepository.Update(page);
                 return RedirectToAction("Index");
             }
