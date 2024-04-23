@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -47,10 +48,15 @@ namespace MyCms.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PageId,GroupId,Title,ShortDescription,Text,Visit,ImageName,ShowInSlider,CreaetDate")] Page page)
+        public ActionResult Create([Bind(Include = "PageId,GroupId,Title,ShortDescription,Text,Visit,ImageName,ShowInSlider,CreaetDate")] Page page , HttpPostedFileBase imgUp)
         {
             if (ModelState.IsValid)
             {
+                if (imgUp != null)
+                {
+                    page.ImageName=Guid.NewGuid()+Path.GetExtension(imgUp.FileName);
+                    imgUp.SaveAs(Server.MapPath("/PageImages/"+page.ImageName));
+                }
                 page.CreaetDate= DateTime.Now;
                 page.Visit = 0;
                 db.PageRepository.Insert(page);
