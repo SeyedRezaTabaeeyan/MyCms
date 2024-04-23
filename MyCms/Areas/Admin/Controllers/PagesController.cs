@@ -127,8 +127,13 @@ namespace MyCms.Areas.Admin.Controllers
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
-        {            
-            db.PageRepository.Delete(id);
+        {
+            Page page = db.PageRepository.GetById(id);
+            if (page.ImageName != null)
+            {
+                System.IO.File.Delete(Server.MapPath("/PageImages/" + page.ImageName));
+            }
+            db.PageRepository.Delete(page);
             return RedirectToAction("Index");
         }
 
