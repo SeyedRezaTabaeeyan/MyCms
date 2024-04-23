@@ -62,7 +62,8 @@
             @Html.DisplayFor(modelItem => item.ShowInSlider)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CreaetDate)
+            @*@Html.DisplayFor(modelItem => item.CreaetDate)*@
+            @item.CreaetDate.ToShamsi()
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.PageId }) |
