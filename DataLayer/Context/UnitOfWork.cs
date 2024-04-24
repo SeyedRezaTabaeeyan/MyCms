@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayer.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,13 +24,13 @@ namespace DataLayer
 		}
 
         //***************************************************
-        private GenericRepository<PageGroup> _pageGroupRepository;
-		public GenericRepository<PageGroup> PageGroupRepository
+        private PageGroupRepository _pageGroupRepository;
+		public PageGroupRepository PageGroupRepository
         {
 			get
 			{ 
 				if(_pageGroupRepository == null)
-                    _pageGroupRepository = new GenericRepository<PageGroup>(db);
+                    _pageGroupRepository = new PageGroupRepository(db);
 				return _pageGroupRepository; 
 			}			
 		}

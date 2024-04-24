@@ -85,19 +85,7 @@
         <div class="row">
 
             <aside class="col-md-4 col-sm-12 col-xs-12 pull-right">
-
-                <section class="category-section border-radius">
-                    <header><i class="fa fa-folder-open-o"></i> <h3> دسته بندی ها </h3></header>
-                    <ul>
-                        <li><a href=""> خبر سایسی  <span>10</span></a></li>
-                        <li><a href=""> خبر اقتصادی  <span>15</span></a></li>
-                        <li><a href=""> خبر اجتماعی  <span>20</span></a></li>
-                        <li><a href=""> خبر سایسی  <span>10</span></a></li>
-                        <li><a href=""> خبر همینطوری  <span>15</span></a></li>
-                        <li><a href=""> خبر سایسی  <span>20</span></a></li>
-                        <li><a href=""> خبر سایسی  <span>10</span></a></li>
-                    </ul>
-                </section>
+                @Html.Action("ShowGroupsByCountPage", "News")                
                 <!-- most views news -->
                 <section class="last-news-side border-radius">
                     <header><i class="icons icon-star"></i> <h3> پربازدیدترین اخبار </h3></header>
@@ -222,7 +210,7 @@
                             <li><a href=""> قوانین سایت  </a></li>
                             <li><a href=""> راهنمای سایت  </a></li>
                         </ul>
-                    </section>
+                    </section>                    
                 </div>
                 <div class="col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
                     <div class="socials">
