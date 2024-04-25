@@ -23,11 +23,10 @@ namespace DataLayer
             return _dbSet.Find(id);
         }
 
-        public virtual List<TEntity> Get(Expression<Func<TEntity,bool>> where=null,Func<IQueryable<TEntity>,IOrderedQueryable<TEntity>> orderby=null,string includes="")
+        public virtual List<TEntity> Get(Expression<Func<TEntity,bool>> where=null,string includes="")
         {
             IQueryable<TEntity> query = _dbSet;
-            if (where != null) query=query.Where(where);
-            if (orderby != null) query = orderby(query);
+            if (where != null) query=query.Where(where);            
             if(includes!="")
                 foreach (string include in includes.Split(','))
                 {

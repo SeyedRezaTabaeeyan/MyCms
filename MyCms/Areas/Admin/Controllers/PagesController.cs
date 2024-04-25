@@ -18,7 +18,7 @@ namespace MyCms.Areas.Admin.Controllers
         // GET: Admin/Pages
         public ActionResult Index()
         {            
-            return View(db.PageRepository.Get(null, null, "PageGroup").ToList());
+            return View(db.PageRepository.Get(null,"PageGroup").ToList());
         }
 
         // GET: Admin/Pages/Details/5
