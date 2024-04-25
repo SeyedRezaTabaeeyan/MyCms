@@ -17,5 +17,10 @@ namespace DataLayer
         {
             return _context.Pages.OrderByDescending(p=>p.Visit).Take(take);
         }
+
+        public IEnumerable<Page> LastNews(int take = 4)
+        {
+            return _context.Pages.OrderByDescending(p => p.CreaetDate).Take(take);
+        }
     }
 }

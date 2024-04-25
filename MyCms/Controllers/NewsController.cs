@@ -28,5 +28,11 @@ namespace MyCms.Controllers
             return PartialView(db.PageRepository.Get(p => p.ShowInSlider == true));
         }
 
+        public ActionResult LastNews()
+        {
+
+            return PartialView(db.PageRepository.LastNews());
+        }
+
     }
 }

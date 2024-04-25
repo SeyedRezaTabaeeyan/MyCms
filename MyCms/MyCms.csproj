@@ -294,7 +294,8 @@
     <Content Include="Views\News\ShowGroupsByCountPage.cshtml" />
     <Content Include="Views\News\ShowGroupsInMenue.cshtml" />
     <Content Include="Views\News\TopNews.cshtml" />
-    <Content Include="Views\Home\Slider.cshtml" />
+    <Content Include="Views\News\Slider.cshtml" />
+    <Content Include="Views\News\LastNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
