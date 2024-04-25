@@ -12,13 +12,13 @@ namespace DataLayer
         MyCmsContext db=new MyCmsContext();
 
         //***************************************************
-        private GenericRepository<Page> _pageRepository;
-		public GenericRepository<Page> PageRepository
+        private PageRepository _pageRepository;
+		public PageRepository PageRepository
         {
 			get 
 			{
 				if(_pageRepository == null)
-                    _pageRepository = new GenericRepository<Page>(db);
+                    _pageRepository = new PageRepository(db);
 				return _pageRepository; 
 			}			
 		}

@@ -19,6 +19,10 @@ namespace MyCms.Controllers
         {
             return PartialView(db.PageGroupRepository.Get());
         }
-       
+        public ActionResult TopNews()
+        {
+            return PartialView(db.PageRepository.TopNews());
+        }
+
     }
 }

@@ -90,7 +90,7 @@
                 <!-- most views news -->
                 <section class="last-news-side border-radius">
                     <header><i class="icons icon-star"></i> <h3> پربازدیدترین اخبار </h3></header>
-                    <ul>
+                    @*<ul>
                         <li>
                             <img class="border-radius" src="/content/img/thumb.png">
                             <h2> <a href="">عنوان خبر در این ناحیه قرار میگیرد</a></h2>
@@ -111,7 +111,8 @@
                             <h2> <a href="">عنوان خبر در این ناحیه قرار میگیرد</a></h2>
                             <span>انتشار : 15/08/1395</span>
                         </li>
-                    </ul>
+                    </ul>*@
+                    @Html.Action("TopNews","News")
                 </section>
                 <!-- end most views news -->
             </aside>
