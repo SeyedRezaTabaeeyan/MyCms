@@ -15,5 +15,10 @@ namespace MyCms.Controllers
         {
             return PartialView(db.PageGroupRepository.GroupsByCountPage());
         }
+        public ActionResult ShowGroupsInMenue()
+        {
+            return PartialView(db.PageGroupRepository.Get());
+        }
+       
     }
 }

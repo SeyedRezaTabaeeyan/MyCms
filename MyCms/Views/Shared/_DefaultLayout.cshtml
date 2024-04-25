@@ -69,12 +69,13 @@
                 <li><a href=""> ورود به سایت </a></li>
                 <li>
                     <span>گروه های خبری</span>
-                    <ul>
+                    @*<ul>
                         <li><a href="">اخبار سیاسی</a></li>
                         <li><a href="">اخبار فرهنگی</a></li>
                         <li><a href="">اخبار اقتصادی</a></li>
                         <li><a href="">اخبار اجتماعی</a></li>
-                    </ul>
+                    </ul>*@
+                    @Html.Action("ShowGroupsInMenue", "News")
                 </li>
             </ul>
         </div>
