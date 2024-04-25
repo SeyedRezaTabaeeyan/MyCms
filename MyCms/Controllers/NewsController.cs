@@ -23,6 +23,10 @@ namespace MyCms.Controllers
         {
             return PartialView(db.PageRepository.TopNews());
         }
+        public ActionResult Slider()
+        {
+            return PartialView(db.PageRepository.Get(p => p.ShowInSlider == true));
+        }
 
     }
 }
