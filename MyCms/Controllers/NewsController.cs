@@ -34,5 +34,11 @@ namespace MyCms.Controllers
             return PartialView(db.PageRepository.LastNews());
         }
 
+        [Route("Archive")]
+        public ActionResult ArchiveNews()
+        {
+            return View(db.PageRepository.Get());
+        }
+
     }
 }
