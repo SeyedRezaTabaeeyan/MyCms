@@ -297,6 +297,7 @@
     <Content Include="Views\News\Slider.cshtml" />
     <Content Include="Views\News\LastNews.cshtml" />
     <Content Include="Views\News\ArchiveNews.cshtml" />
+    <Content Include="Views\News\ShowNewsByGroup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

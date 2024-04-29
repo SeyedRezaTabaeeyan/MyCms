@@ -2,6 +2,6 @@
 <ul>
     @foreach (var item in Model)
     {
-        <li><a href="">@item.GroupTitle </a></li>
+        <li><a href="/Groups/@item.GroupId/@item.GroupTitle">@item.GroupTitle </a></li>
     }    
 </ul>
