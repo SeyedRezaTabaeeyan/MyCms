@@ -1,0 +1,94 @@
+﻿@model DataLayer.Page
+<ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">خانه </a></li>
+    <li class="breadcrumb-item"><a href="/Archive">اخبار </a></li>
+    <li class="breadcrumb-item"><a href="/Groups/@Model.PageGroup.GroupId/@Model.PageGroup.GroupTitle">@Model.PageGroup.GroupTitle</a></li>
+    <li class="breadcrumb-item active">@Model.Title </li>
+</ul>
+
+<section class="single-news border-radius">
+    <header><h2> @Model.Title  </h2> <span> <i class="fa fa-calendar"></i>  انتشار : @Model.CreaetDate.ToShamsi()</span></header>
+    <article>
+        <p>
+            @Model.ShortDescription
+        </p>
+        <img src="~/PageImages/@Model.ImageName" class="thumbnail" style="max-width:100%;margin:10px auto"  />
+        <p>
+            @Model.Text
+        </p>
+    </article>
+</section>
+
+<div class="keywords border-radius">
+    <a href=""> کلمات کلیدی </a>
+    <a href=""> کلمات کلیدی </a>
+    <a href=""> کلمات کلیدی </a>
+    <a href=""> کلمات کلیدی </a>
+    <a href=""> کلمات کلیدی </a>
+    <a href=""> کلمات کلیدی </a>
+</div>
+
+
+<section class="comment-layer">
+    <header> <i class="fa fa-comments"></i><h5> دیدگاه کاربران </h5><span> 25 دیدگاه </span> </header>
+    <ul>
+        <!-- start each comment -->
+        <li>
+            <img src="/Content/img/thumb.png">
+            <div>
+                <span> میترا رحیمی </span>
+                <span> 25 اردیبهشت 1395 </span>
+            </div>
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون ولورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و</p>
+        </li>
+        <!-- end each comment -->
+        <!-- start each comment -->
+        <li>
+            <img src="/Content/img/thumb.png">
+            <div>
+                <span> میترا رحیمی </span>
+                <span> 25 اردیبهشت 1395 </span>
+            </div>
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون ولورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و</p>
+        </li>
+        <!-- end each comment -->
+        <!-- start each comment -->
+        <li>
+            <img src="/Content/img/thumb.png">
+            <div>
+                <span> میترا رحیمی </span>
+                <span> 25 اردیبهشت 1395 </span>
+            </div>
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون ولورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و</p>
+        </li>
+        <!-- end each comment -->
+        <!-- start each comment -->
+        <li>
+            <img src="/Content/img/thumb.png">
+            <div>
+                <span> میترا رحیمی </span>
+                <span> 25 اردیبهشت 1395 </span>
+            </div>
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون ولورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و</p>
+        </li>
+        <!-- end each comment -->
+    </ul>
+
+
+    <h6> شما هم دیدگاه خود را ارسال کنید </h6>
+    <form class="comment-form" action="" method="post">
+        <div>
+            <input placeholder=" نام و نام خانوادگی" type="text">
+            <input placeholder=" ایمیل خود را وارد نمایید " type="email">            
+        </div>
+        <textarea placeholder=" متن دیدگاه"> </textarea>
+        <input value="ثبت دیدگاه ارزشمند شما " type="button">
+    </form>
+</section>
+
+@*<script src="/Content/js/bootstrap.min.js"></script>
+<script src="/Content/js/owl.carousel.js"></script>
+<script src="/Content/js/script.js"></script>*@
+
+
+

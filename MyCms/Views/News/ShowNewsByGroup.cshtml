@@ -4,7 +4,7 @@
 }
 <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">خانه </a></li>
-    <li class="breadcrumb-item"><a href="#">اخبار </a></li>
+    <li class="breadcrumb-item"><a href="/Archive">اخبار </a></li>
     <li class="breadcrumb-item active"> @ViewBag.name </li>
 </ul>
 
@@ -16,12 +16,12 @@
         {
             <li>
                 <img class="border-radius" src="~/PageImages/@item.ImageName">
-                <h2> <a href=""> @item.Title </a></h2>
+                <h2> <a href="/News/@item.PageId"> @item.Title </a></h2>
                 <p>
                     @item.ShortDescription
                 </p>
                 <span class="date-publish"><i class="fa fa-calendar"></i> انتشار : @item.CreaetDate.ToShamsi() </span>
-                <a href="" class="more-link"><i class="icons icon-more"></i></a>
+                <a href="/News/@item.PageId" class="more-link"><i class="icons icon-more"></i></a>
             </li>
         }           
 

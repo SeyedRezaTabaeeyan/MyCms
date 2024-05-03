@@ -40,6 +40,7 @@ namespace DataLayer
             try
             {
                 _dbSet.Add(entity);
+                _context.SaveChanges();
                 return true;
             }
             catch
@@ -53,6 +54,7 @@ namespace DataLayer
             try
             {
                 _context.Entry(entity).State = EntityState.Modified;
+                _context.SaveChanges();
                 return true;
             }
             catch
@@ -66,6 +68,7 @@ namespace DataLayer
             try
             {
                 _context.Entry(entity).State = EntityState.Deleted;
+                _context.SaveChanges();
                 return true;
             }
             catch

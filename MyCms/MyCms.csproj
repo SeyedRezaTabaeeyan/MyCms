@@ -298,6 +298,7 @@
     <Content Include="Views\News\LastNews.cshtml" />
     <Content Include="Views\News\ArchiveNews.cshtml" />
     <Content Include="Views\News\ShowNewsByGroup.cshtml" />
+    <Content Include="Views\News\ShowNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -47,6 +47,33 @@ namespace MyCms.Controllers
             return View(db.PageRepository.Get(p=>p.GroupId==id));
         }
 
+        [Route("News/{id}")]
+        public ActionResult ShowNews(int id)
+        {
+            var page=db.PageRepository.GetById(id);
+            if (page == null)
+            {
+                return HttpNotFound();
+            }
+            
+            return View(page);
+        }
+
+        public ActionResult AddComment(int id,string name,string email,string comment)
+        {
+            db.PageCommentRepository.Insert(new PageComment()
+            {
+                PageId= id,
+                Name= name,
+                Email= email,
+                Comment= comment,
+                CreateDate= DateTime.Now,
+                Website="aaaa"
+
+            }); 
+            return null;
+        }
+
 
     }
 }
