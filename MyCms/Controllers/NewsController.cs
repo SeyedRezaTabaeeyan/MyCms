@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace MyCms.Controllers
 {
@@ -59,7 +60,7 @@ namespace MyCms.Controllers
             return View(page);
         }
         
-        public ActionResult AddComment(int id,string name,string email,string comment)
+        public ActionResult AddComment(int id, string name,string email,string comment)
         {
             db.PageCommentRepository.Insert(new PageComment()
             {
@@ -69,8 +70,13 @@ namespace MyCms.Controllers
                 Comment= comment,
                 CreateDate= DateTime.Now
             }); 
-            return null;
+            return PartialView("ShowComments",db.PageCommentRepository.Get(p => p.PageId == id));
         }
-        
+
+        public ActionResult ShowComments(int id)
+        {
+            return PartialView(db.PageCommentRepository.Get(p=>p.PageId== id));
+        }
+
     }
 }
