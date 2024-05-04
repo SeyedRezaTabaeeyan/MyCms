@@ -58,7 +58,7 @@ namespace MyCms.Controllers
             
             return View(page);
         }
-
+        
         public ActionResult AddComment(int id,string name,string email,string comment)
         {
             db.PageCommentRepository.Insert(new PageComment()
@@ -67,13 +67,10 @@ namespace MyCms.Controllers
                 Name= name,
                 Email= email,
                 Comment= comment,
-                CreateDate= DateTime.Now,
-                Website="aaaa"
-
+                CreateDate= DateTime.Now
             }); 
             return null;
         }
-
-
+        
     }
 }

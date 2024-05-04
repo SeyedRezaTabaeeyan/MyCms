@@ -78,17 +78,26 @@
     <h6> شما هم دیدگاه خود را ارسال کنید </h6>
     <form class="comment-form" action="" method="post">
         <div>
-            <input placeholder=" نام و نام خانوادگی" type="text">
-            <input placeholder=" ایمیل خود را وارد نمایید " type="email">            
+            <input placeholder=" نام و نام خانوادگی" type="text" id="txtName">
+            <input placeholder=" ایمیل خود را وارد نمایید " type="email" id="txtEmail">            
         </div>
-        <textarea placeholder=" متن دیدگاه"> </textarea>
-        <input value="ثبت دیدگاه ارزشمند شما " type="button">
+        <textarea placeholder=" متن دیدگاه" id="txtComment"> </textarea>
+        <input value="ثبت دیدگاه ارزشمند شما " type="button" onclick="addComment()">
     </form>
 </section>
 
-@*<script src="/Content/js/bootstrap.min.js"></script>
-<script src="/Content/js/owl.carousel.js"></script>
-<script src="/Content/js/script.js"></script>*@
+<script>
+    function addComment() {
+        $.ajax({
+            url: "/News/AddComment/" +@Model.PageId,
+            type: "Get",
+            data: { name: $("#txtName").val(), email: $("#txtEmail").val(), comment: $("#txtComment").val() }
 
+        }).done(function () {
+            $("#txtName").val("");
+            $("#txtEmail").val("");
+            $("#txtComment").val("");
+        });
 
-
+    }
+</script>
