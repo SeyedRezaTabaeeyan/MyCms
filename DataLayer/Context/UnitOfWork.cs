@@ -48,6 +48,17 @@ namespace DataLayer
 			
 		}
 
+        private AdminLoginRepository _AdminLoginRepository;
+        public AdminLoginRepository AdminLoginRepository
+        {
+            get
+            {
+                if (_AdminLoginRepository == null)
+                    _AdminLoginRepository = new AdminLoginRepository(db);
+                return _AdminLoginRepository;
+            }
+        }
+
         public void Dispose()
         {
 			db.SaveChanges();

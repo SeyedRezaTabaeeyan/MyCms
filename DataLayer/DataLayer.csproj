@@ -61,11 +61,17 @@
     <Compile Include="Migrations\202405050730583_Add-Tags-Pages.designer.cs">
       <DependentUpon>202405050730583_Add-Tags-Pages.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202405051355125_Add-AdminLogins.cs" />
+    <Compile Include="Migrations\202405051355125_Add-AdminLogins.designer.cs">
+      <DependentUpon>202405051355125_Add-AdminLogins.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AdminLogin.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PageComment.cs" />
     <Compile Include="Models\PageGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AdminLoginRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\PageGroupRepository.cs" />
     <Compile Include="Repositories\PageRepository.cs" />
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202405050730583_Add-Tags-Pages.resx">
       <DependentUpon>202405050730583_Add-Tags-Pages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405051355125_Add-AdminLogins.resx">
+      <DependentUpon>202405051355125_Add-AdminLogins.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
