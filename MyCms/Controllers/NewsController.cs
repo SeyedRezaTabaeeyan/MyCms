@@ -78,5 +78,12 @@ namespace MyCms.Controllers
             return PartialView(db.PageCommentRepository.Get(p=>p.PageId== id));
         }
 
+        [Route("Search")]
+        public ActionResult Search(string q)
+        {
+            ViewBag.Name = q;
+            return View(db.PageRepository.SearchPage(q));
+        }
+
     }
 }

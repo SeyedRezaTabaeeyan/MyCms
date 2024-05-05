@@ -22,5 +22,12 @@ namespace DataLayer
         {
             return _context.Pages.OrderByDescending(p => p.CreaetDate).Take(take);
         }
+
+        public IEnumerable<Page> SearchPage(string q)
+        {
+            return _context.Pages.Where(p=>p.Text.Contains(q)||p.ShortDescription.Contains(q)
+                                           ||p.Title.Contains(q)||p.Tags.Contains(q)).Distinct();
+        }
+
     }
 }

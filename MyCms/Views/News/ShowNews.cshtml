@@ -20,12 +20,12 @@
 </section>
 
 <div class="keywords border-radius">
-    <a href=""> کلمات کلیدی </a>
-    <a href=""> کلمات کلیدی </a>
-    <a href=""> کلمات کلیدی </a>
-    <a href=""> کلمات کلیدی </a>
-    <a href=""> کلمات کلیدی </a>
-    <a href=""> کلمات کلیدی </a>
+    @foreach (var item in Model.Tags.Split(','))
+    {
+        <a href="/Search?q=@item"> @item </a>
+    }
+
+
 </div>
 
 
