@@ -76,6 +76,7 @@
     <Compile Include="Repositories\PageGroupRepository.cs" />
     <Compile Include="Repositories\PageRepository.cs" />
     <Compile Include="ViewModels\GroupsByCountPageViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

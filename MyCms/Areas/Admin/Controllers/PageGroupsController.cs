@@ -10,6 +10,7 @@ using DataLayer;
 
 namespace MyCms.Areas.Admin.Controllers
 {
+    [Authorize]
     public class PageGroupsController : Controller
     {
         private UnitOfWork db = new UnitOfWork();
