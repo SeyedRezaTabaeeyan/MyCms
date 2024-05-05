@@ -49,6 +49,9 @@ namespace DataLayer
         [Display(Name = "تاریخ ایجاد")]        
         public DateTime CreaetDate { get; set; }
 
+        [Display(Name = "کلمات کلیدی")]
+        public string Tags { get; set; }
+
 
         //Navigation Property
         public virtual List<PageComment> PageComments { get; set; }
