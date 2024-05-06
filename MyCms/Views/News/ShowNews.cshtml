@@ -12,9 +12,13 @@
         <p>
             @Model.ShortDescription
         </p>
-        <img src="~/PageImages/@Model.ImageName" class="thumbnail" style="max-width:100%;margin:10px auto"  />
+        @if (Model.ImageName != null)
+        {
+            <img src="~/PageImages/@Model.ImageName" class="thumbnail" style="max-width:100%;margin:10px auto" />
+        }
+            
         <p>
-            @Model.Text
+            @Html.Raw(Model.Text)
         </p>
     </article>
 </section>

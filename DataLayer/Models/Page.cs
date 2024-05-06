@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,11 +28,14 @@ namespace DataLayer
         [Display(Name = "توضیح مختصر")]
         [Required(ErrorMessage = "لطفا {0} را وارد نمایید ")]
         [MaxLength(350)]
+        [DataType(DataType.MultilineText)]
         public string ShortDescription { get; set; }
 
 
         [Display(Name = "متن صفحه")]
         [Required(ErrorMessage = "لطفا {0} را وارد نمایید ")]
+        [DataType(DataType.MultilineText)]
+        [AllowHtml]
         public string Text { get; set; }
 
 
